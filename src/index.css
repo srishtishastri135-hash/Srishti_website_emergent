@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-[#e8f0f8] bg-[#0e1320];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #6B8DD6 0%, #8FB3F5 50%, #9BC8FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(26, 32, 48, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hover-lift {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Neon glow effect for cards */
+  .neon-glow-card {
+    transition: box-shadow 200ms ease-in-out, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neon-glow-card:hover,
+  .neon-glow-card:focus-within {
+    box-shadow: 0 0 12px rgba(100, 149, 237, 0.4),
+                0 0 24px rgba(100, 149, 237, 0.2),
+                0 4px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Neon glow effect for primary buttons */
+  .neon-glow-button {
+    transition: box-shadow 200ms ease-in-out, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neon-glow-button:hover,
+  .neon-glow-button:focus-visible {
+    box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(100, 149, 237, 0.4),
+                0 0 20px rgba(100, 149, 237, 0.3);
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid #8FB3F5;
+    outline-offset: 2px;
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
