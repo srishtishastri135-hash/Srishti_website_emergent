@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Breadcrumb from '../components/Breadcrumb';
-import BohoSeparator from '../components/BohoSeparator';
+import WaveformSeparator from '../components/WaveformSeparator';
+import ScrollReveal from '../components/ScrollReveal';
 import { selectedWorks, cymasonic } from '../data/mock';
 
 export default function Work() {
