@@ -30,7 +30,7 @@ export default function Work() {
     <div className="min-h-screen bg-[#0e1320]">
       <Header currentPage="work" />
 
-      <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'Work' }]} />
 
@@ -45,7 +45,11 @@ export default function Work() {
 
           <section id="selected" className="scroll-mt-24">
             <ScrollReveal>
-              <h2 className="font-serif text-3xl font-bold mb-8 gradient-text">Selected Works</h2>
+              <div className="flex items-center justify-center mb-8">
+                <FeatherLeafMotif type="leaf" position="left" />
+                <h2 className="font-serif text-3xl font-bold gradient-text">Selected Works</h2>
+                <FeatherLeafMotif type="feather" position="right" />
+              </div>
             </ScrollReveal>
 
             <div className="space-y-8">
@@ -58,7 +62,12 @@ export default function Work() {
                     {work.subtitle && (
                       <p className="text-sm text-[#8FB3F5] font-semibold mb-3">{work.subtitle}</p>
                     )}
-                    <p className="text-[#a8bcd4] mb-6">{work.role}</p>
+                    <p className="text-[#a8bcd4] mb-4">{work.role}</p>
+
+                    {/* Waveform preview for audio work */}
+                    <div className="mb-6">
+                      <WaveformPreview bars={60} />
+                    </div>
 
                     <div className="flex flex-wrap gap-3">
                       {work.links.map((link, index) => (
@@ -68,9 +77,10 @@ export default function Work() {
                           target={link.placeholder ? undefined : '_blank'}
                           rel={link.placeholder ? undefined : 'noopener noreferrer'}
                           className="inline-flex items-center gap-2 px-4 py-2 glass-card hover:bg-[#1f2738] text-[#8FB3F5] rounded-lg text-sm font-medium transition-all duration-200 focus-ring button-hover-scale"
+                          aria-label={`${link.label} - Opens in new tab`}
                         >
-                          {link.label}
-                          {!link.placeholder && <ExternalLink className="w-3.5 h-3.5" />}
+                          <span>{link.label}</span>
+                          {!link.placeholder && <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />}
                         </a>
                       ))}
                     </div>
