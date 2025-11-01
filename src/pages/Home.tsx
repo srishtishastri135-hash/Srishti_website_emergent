@@ -20,7 +20,7 @@ export default function Home() {
 
       <main id="main-content">
         <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
-          {/* Beach image background with overlay */}
+          {/* Beach image background with darker overlay for better contrast */}
           <div className="absolute inset-0">
             <img
               src="https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -28,11 +28,12 @@ export default function Home() {
               className="w-full h-full object-cover"
               aria-hidden="true"
             />
-            <div className="absolute inset-0 bg-black/80"></div>
-            {/* Watercolor gradient overlay */}
-            <div className="absolute inset-0 watercolor-gradient"></div>
-            {/* Animated wave overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 opacity-30">
+            {/* Much darker overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-[#0e1320]/90"></div>
+            {/* Watercolor gradient overlay with darker tones */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0e1320]/60 via-[#1a2035]/50 to-[#0e1320]/70"></div>
+            {/* Animated wave overlay - more visible now */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 opacity-40">
               <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none">
                 <path
                   d="M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z"
@@ -52,9 +53,9 @@ export default function Home() {
                 </path>
                 <defs>
                   <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#6B8DD6" stopOpacity="0.6" />
-                    <stop offset="50%" stopColor="#8FB3F5" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#9BC8FF" stopOpacity="0.6" />
+                    <stop offset="0%" stopColor="#6B8DD6" stopOpacity="0.7" />
+                    <stop offset="50%" stopColor="#8FB3F5" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#9BC8FF" stopOpacity="0.7" />
                   </linearGradient>
                 </defs>
               </svg>
