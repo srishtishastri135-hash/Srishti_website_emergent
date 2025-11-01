@@ -38,7 +38,7 @@ export default function About() {
     <div className="min-h-screen bg-[#0e1320]">
       <Header currentPage="about" />
 
-      <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'About' }]} />
 
