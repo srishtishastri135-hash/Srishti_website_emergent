@@ -70,6 +70,8 @@ export const selectedWorks = [
       { label: "ಟೀಚರ್ Student Chemistry | Nithin Kamath Live", url: "https://youtu.be/S_ow9S0gpI0?feature=shared" },
       { label: "GAND JANMA | Nithin Kamath Live", url: "https://youtu.be/4a75r7LZsnM?feature=shared" },
       { label: "Bengaluru & Mumbai | Nithin Kamath Live", url: "https://youtu.be/YWBHD4mZP9Q?feature=shared" },
+      { label: "Kashta Sukha! | Nithin Kamath Live", url: "https://youtu.be/SU3mP6UXqek?si=jKUMT3dc7-uEEEQ3" },
+      { label: "Moor Jana! EP 1 Part 1 | Crowdwork Comedy", url: "https://youtu.be/bjpy5-LD_EY?si=VlYTkGuCuvMqQ50o" },
       { label: "Ganesh Kashyap is Beedhi Basava", url: "https://youtu.be/BWLVuTcui7o?si=gVNoSFHdmKo9pnIN" },
       { label: "Bachelors & 2BHK | MANOJ U V", url: "https://youtu.be/5lFOyxzZr6Q?si=eLruF8x9Q6xA5IKX" }
     ],
