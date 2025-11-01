@@ -92,5 +92,224 @@
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Custom Cursor Effect */
+  body {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8FB3F5;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    mix-blend-mode: difference;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: #8FB3F5;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: all 0.05s ease;
+  }
+
+  /* Audio Visualizer Animations */
+  @keyframes pulse-bar {
+    0%, 100% {
+      transform: scaleY(0.3);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
+  .audio-bar {
+    animation: pulse-bar 1s ease-in-out infinite;
+    transform-origin: bottom;
+  }
+
+  /* Waveform Animation */
+  @keyframes wave-flow {
+    0% {
+      d: path('M0,30 Q100,10 200,30 T400,30 T600,30 T800,30');
+    }
+    50% {
+      d: path('M0,30 Q100,50 200,30 T400,30 T600,30 T800,30');
+    }
+    100% {
+      d: path('M0,30 Q100,10 200,30 T400,30 T600,30 T800,30');
+    }
+  }
+
+  .wave-path {
+    animation: wave-flow 3s ease-in-out infinite;
+  }
+
+  /* Scroll Reveal Animation */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Enhanced 3D Card Tilt */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+  }
+
+  /* Breathing Animation for Hero Elements */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
+  .breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  /* Gradient Background Animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animated-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  /* Pulse Glow Effect */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(143, 179, 245, 0.3), 0 0 20px rgba(143, 179, 245, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(143, 179, 245, 0.5), 0 0 40px rgba(143, 179, 245, 0.3);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Button Hover with Scale */
+  .button-hover-scale {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .button-hover-scale:hover {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  .button-hover-scale:active {
+    transform: scale(0.98) translateY(0);
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(143, 179, 245, 0.3), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  /* Text Glitch Effect on Hover */
+  .text-glitch {
+    position: relative;
+  }
+
+  .text-glitch:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 #8FB3F5;
+    top: 0;
+    color: #e8f0f8;
+    overflow: hidden;
+    animation: noise-anim 0.3s infinite linear alternate-reverse;
+  }
+
+  @keyframes noise-anim {
+    0% {
+      clip-path: inset(40% 0 61% 0);
+    }
+    20% {
+      clip-path: inset(92% 0 1% 0);
+    }
+    40% {
+      clip-path: inset(43% 0 1% 0);
+    }
+    60% {
+      clip-path: inset(25% 0 58% 0);
+    }
+    80% {
+      clip-path: inset(54% 0 7% 0);
+    }
+    100% {
+      clip-path: inset(58% 0 43% 0);
+    }
+  }
+
+  /* Magnetic Hover Effect */
+  .magnetic {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hide default cursor on interactive elements */
+  a, button, [role=\"button\"] {
+    cursor: none;
+  }
 }
 
