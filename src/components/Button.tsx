@@ -19,11 +19,11 @@ export default function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 focus-ring';
+  const baseStyles = 'inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-200 focus-ring button-hover-scale';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-[#6B8DD6] via-[#8FB3F5] to-[#9BC8FF] text-[#0e1320] shadow-lg neon-glow-button hover-lift',
-    secondary: 'glass-card text-[#8FB3F5] hover:bg-[#1f2738] hover-lift',
+    primary: 'bg-gradient-to-r from-[#6B8DD6] via-[#8FB3F5] to-[#9BC8FF] text-[#0e1320] shadow-lg neon-glow-button',
+    secondary: 'glass-card text-[#8FB3F5] hover:bg-[#1f2738]',
     outline: 'border-2 border-[#8FB3F5]/50 text-[#8FB3F5] bg-transparent hover:bg-gradient-to-r hover:from-[#6B8DD6] hover:via-[#8FB3F5] hover:to-[#9BC8FF] hover:text-[#0e1320] hover:border-transparent neon-glow-button',
   };
 
