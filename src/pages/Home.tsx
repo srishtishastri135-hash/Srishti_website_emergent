@@ -18,102 +18,152 @@ export default function Home() {
     <div className="min-h-screen bg-[#0e1320]">
       <Header currentPage="home" />
 
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
-        {/* Animated gradient background instead of static image */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0e1320] via-[#1a2035] to-[#0e1320] animated-gradient"></div>
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6B8DD6]/20 rounded-full blur-3xl float"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#9BC8FF]/20 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
+      <main id="main-content">
+        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
+          {/* Beach image background with overlay */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=1920"
+              alt=""
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-black/80"></div>
+            {/* Watercolor gradient overlay */}
+            <div className="absolute inset-0 watercolor-gradient"></div>
+            {/* Animated wave overlay */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 opacity-30">
+              <svg className="w-full h-full" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                <path
+                  d="M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z"
+                  fill="url(#waveGradient)"
+                  className="wave-path"
+                >
+                  <animate
+                    attributeName="d"
+                    dur="10s"
+                    repeatCount="indefinite"
+                    values="
+                      M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z;
+                      M0,50 Q300,80 600,50 T1200,50 L1200,100 L0,100 Z;
+                      M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z
+                    "
+                  />
+                </path>
+                <defs>
+                  <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#6B8DD6" stopOpacity="0.6" />
+                    <stop offset="50%" stopColor="#8FB3F5" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#9BC8FF" stopOpacity="0.6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
-        </div>
 
-        <div className="container mx-auto max-w-[800px] relative z-10 text-center">
-          <ScrollReveal>
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 leading-tight text-[#e8f0f8]">
-              {personalInfo.name}
-            </h1>
-          </ScrollReveal>
+          {/* Dreamcatcher decoration */}
+          <div className="absolute top-24 right-8 hidden lg:block">
+            <Dreamcatcher className="float" />
+          </div>
 
-          <ScrollReveal delay={100}>
-            <h2 className="text-xl sm:text-2xl text-[#8FB3F5] mb-4 font-medium">
-              Audio & Recording Engineer
-            </h2>
-          </ScrollReveal>
+          <div className="container mx-auto max-w-[800px] relative z-10 text-center">
+            <ScrollReveal>
+              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 leading-tight text-[#e8f0f8]">
+                {personalInfo.name}
+              </h1>
+            </ScrollReveal>
 
-          <ScrollReveal delay={200}>
-            <p className="text-base sm:text-lg text-[#e8f0f8] mb-6 leading-relaxed mx-auto">
-              Research-driven audio development (R&D), end-to-end post workflows, and music/sound production for live and visual media. <span className="text-[#8FB3F5] font-medium">Available for field recording projects.</span>
-            </p>
-          </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h2 className="text-xl sm:text-2xl text-[#8FB3F5] mb-4 font-medium">
+                Audio & Recording Engineer
+              </h2>
+            </ScrollReveal>
 
-          <ScrollReveal delay={300}>
-            <div className="mb-8">
-              <AudioVisualizer bars={30} className="mx-auto" />
-            </div>
-          </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <p className="text-base sm:text-lg text-[#e8f0f8] mb-4 leading-relaxed mx-auto">
+                Research-driven audio development (R&D), end-to-end post workflows, and music/sound production for live and visual media.
+              </p>
+            </ScrollReveal>
 
-          <ScrollReveal delay={400}>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 text-sm text-[#e8f0f8]">
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#8FB3F5]" />
-                <span>{personalInfo.location}</span>
+            <ScrollReveal delay={250}>
+              <div className="flex justify-center mb-6">
+                <SunMoonPhase available={true} />
               </div>
-              <span className="text-[#8FB3F5]">•</span>
-              <a href={`mailto:${personalInfo.email}`} className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5" />
-                Email
-              </a>
-              <span className="text-[#8FB3F5]">•</span>
-              <a href={`tel:${personalInfo.phone}`} className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5" />
-                {personalInfo.phone}
-              </a>
-              <span className="text-[#8FB3F5]">•</span>
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-                LinkedIn
-              </a>
-              <span className="text-[#8FB3F5]">•</span>
-              <a
-                href={personalInfo.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5"
-              >
-                <Instagram className="w-3.5 h-3.5" />
-                Instagram
-              </a>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          <ScrollReveal delay={500}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button href="/work" icon>
-                View Selected Works
-              </Button>
-              <Button href="/contact" variant="outline">
-                Get in Touch
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+            <ScrollReveal delay={300}>
+              <div className="mb-8">
+                <AudioVisualizer bars={30} className="mx-auto" />
+              </div>
+            </ScrollReveal>
 
-      <WaveformSeparator />
+            <ScrollReveal delay={400}>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 text-sm text-[#e8f0f8]">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#8FB3F5]" aria-hidden="true" />
+                  <span>{personalInfo.location}</span>
+                </div>
+                <span className="text-[#8FB3F5]" aria-hidden="true">•</span>
+                <a href={`mailto:${personalInfo.email}`} className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Email</span>
+                </a>
+                <span className="text-[#8FB3F5]" aria-hidden="true">•</span>
+                <a href={`tel:${personalInfo.phone}`} className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>{personalInfo.phone}</span>
+                </a>
+                <span className="text-[#8FB3F5]" aria-hidden="true">•</span>
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5"
+                  aria-label="LinkedIn profile"
+                >
+                  <Linkedin className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>LinkedIn</span>
+                </a>
+                <span className="text-[#8FB3F5]" aria-hidden="true">•</span>
+                <a
+                  href={personalInfo.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#8FB3F5] transition-colors focus-ring flex items-center gap-1.5"
+                  aria-label="Instagram profile"
+                >
+                  <Instagram className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </ScrollReveal>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <ScrollReveal>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-4 gradient-text">
-              Core Expertise
-            </h2>
-          </ScrollReveal>
+            <ScrollReveal delay={500}>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button href="/work" icon>
+                  View Selected Works
+                </Button>
+                <Button href="/contact" variant="outline">
+                  Get in Touch
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <WaveformSeparator />
+
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-6xl">
+            <ScrollReveal>
+              <div className="flex items-center justify-center mb-4">
+                <FeatherLeafMotif type="feather" position="left" />
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center gradient-text">
+                  Core Expertise
+                </h2>
+                <FeatherLeafMotif type="leaf" position="right" />
+              </div>
+            </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="text-center text-[#a8bcd4] mb-12 max-w-2xl mx-auto">
               Comprehensive audio capabilities across research, production, and post-production workflows
