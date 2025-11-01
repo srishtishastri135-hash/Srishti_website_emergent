@@ -6,6 +6,9 @@ import Card from '../components/Card';
 import WaveformSeparator from '../components/WaveformSeparator';
 import AudioVisualizer from '../components/AudioVisualizer';
 import ScrollReveal from '../components/ScrollReveal';
+import Dreamcatcher from '../components/Dreamcatcher';
+import FeatherLeafMotif from '../components/FeatherLeafMotif';
+import SunMoonPhase from '../components/SunMoonPhase';
 import { personalInfo, valueHighlights, selectedWorks } from '../data/mock';
 
 export default function Home() {
