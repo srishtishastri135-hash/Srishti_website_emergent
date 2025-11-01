@@ -93,32 +93,29 @@
     @apply mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Custom Cursor Effect */
-  body {
-    cursor: none;
-  }
-
+  /* Custom Cursor Effect - Ring follows arrow */
   .custom-cursor {
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 2px solid #8FB3F5;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0.1s ease;
-    mix-blend-mode: difference;
+    transition: all 0.15s ease;
+    opacity: 0.6;
   }
 
   .custom-cursor-dot {
     position: fixed;
-    width: 4px;
-    height: 4px;
+    width: 8px;
+    height: 8px;
     background: #8FB3F5;
     border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
-    transition: all 0.05s ease;
+    transition: all 0.1s ease;
+    opacity: 0.8;
   }
 
   /* Audio Visualizer Animations */
