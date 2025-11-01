@@ -32,6 +32,11 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  /* Radial gradient for vignette effect */
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+
   .hover\:scale-102:hover {
     transform: scale(1.02);
   }
