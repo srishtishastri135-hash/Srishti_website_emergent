@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import Card from '../components/Card';
-import Badge from '../components/Badge';
 import WaveformSeparator from '../components/WaveformSeparator';
 import AudioVisualizer from '../components/AudioVisualizer';
 import ScrollReveal from '../components/ScrollReveal';
