@@ -162,103 +162,103 @@ export default function Home() {
                   Core Expertise
                 </h2>
                 <FeatherLeafMotif type="leaf" position="right" />
+              </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-center text-[#a8bcd4] mb-12 max-w-2xl mx-auto">
+                Comprehensive audio capabilities across research, production, and post-production workflows
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {valueHighlights.map((highlight, index) => (
+                <ScrollReveal key={highlight.id} delay={index * 100}>
+                  <Card badge={highlight.category} featured={highlight.featured}>
+                    <h3 className="text-xl font-bold text-[#e8f0f8] mb-3">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-[#a8bcd4] leading-relaxed">
+                      {highlight.description}
+                    </p>
+                  </Card>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <WaveformSeparator />
+
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#121826]">
+          <div className="container mx-auto max-w-6xl">
+            <ScrollReveal>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-4 gradient-text">
+                Selected Works
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-center text-[#a8bcd4] mb-12">
+                Featured projects across production and post-production
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+              {featuredWorks.map((work, index) => (
+                <ScrollReveal key={work.id} delay={index * 150}>
+                  <Card badge={work.category}>
+                    <h3 className="text-xl font-bold text-[#e8f0f8] mb-2">
+                      {work.title}
+                    </h3>
+                    {work.subtitle && (
+                      <p className="text-sm text-[#8FB3F5] font-medium mb-3">{work.subtitle}</p>
+                    )}
+                    <p className="text-[#a8bcd4] mb-4 text-sm">{work.role}</p>
+                    <Button href={work.links[0].url} variant="secondary" className="text-sm">
+                      View Project
+                    </Button>
+                  </Card>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal>
+              <div className="text-center">
+                <Button href="/work#selected" icon>
+                  View Full Portfolio
+                </Button>
               </div>
             </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <p className="text-center text-[#a8bcd4] mb-12 max-w-2xl mx-auto">
-              Comprehensive audio capabilities across research, production, and post-production workflows
-            </p>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {valueHighlights.map((highlight, index) => (
-              <ScrollReveal key={highlight.id} delay={index * 100}>
-                <Card badge={highlight.category} featured={highlight.featured}>
-                  <h3 className="text-xl font-bold text-[#e8f0f8] mb-3">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-[#a8bcd4] leading-relaxed">
-                    {highlight.description}
-                  </p>
-                </Card>
-              </ScrollReveal>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <WaveformSeparator />
+        <WaveformSeparator />
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#121826]">
-        <div className="container mx-auto max-w-6xl">
-          <ScrollReveal>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center mb-4 gradient-text">
-              Selected Works
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <p className="text-center text-[#a8bcd4] mb-12">
-              Featured projects across production and post-production
-            </p>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {featuredWorks.map((work, index) => (
-              <ScrollReveal key={work.id} delay={index * 150}>
-                <Card badge={work.category}>
-                  <h3 className="text-xl font-bold text-[#e8f0f8] mb-2">
-                    {work.title}
-                  </h3>
-                  {work.subtitle && (
-                    <p className="text-sm text-[#8FB3F5] font-medium mb-3">{work.subtitle}</p>
-                  )}
-                  <p className="text-[#a8bcd4] mb-4 text-sm">{work.role}</p>
-                  <Button href={work.links[0].url} variant="secondary" className="text-sm">
-                    View Project
-                  </Button>
-                </Card>
-              </ScrollReveal>
-            ))}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#6B8DD6]/10 via-[#8FB3F5]/5 to-[#9BC8FF]/10">
+          <div className="container mx-auto max-w-4xl text-center">
+            <ScrollReveal>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-6 text-[#e8f0f8]">
+                Let's Collaborate
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-[#a8bcd4] mb-8 max-w-2xl mx-auto">
+                Available for audio engineering, post-production, and R&D projects. Professional workflows with
+                structured handoffs.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button href={`mailto:${personalInfo.email}`}>Email</Button>
+                <Button href={personalInfo.linkedin} variant="outline">
+                  LinkedIn
+                </Button>
+                <Button href="/contact" variant="secondary">
+                  Contact Page
+                </Button>
+              </div>
+            </ScrollReveal>
           </div>
-
-          <ScrollReveal>
-            <div className="text-center">
-              <Button href="/work#selected" icon>
-                View Full Portfolio
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <WaveformSeparator />
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#6B8DD6]/10 via-[#8FB3F5]/5 to-[#9BC8FF]/10">
-        <div className="container mx-auto max-w-4xl text-center">
-          <ScrollReveal>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-6 text-[#e8f0f8]">
-              Let's Collaborate
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <p className="text-lg text-[#a8bcd4] mb-8 max-w-2xl mx-auto">
-              Available for audio engineering, post-production, and R&D projects. Professional workflows with
-              structured handoffs.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button href={`mailto:${personalInfo.email}`}>Email</Button>
-              <Button href={personalInfo.linkedin} variant="outline">
-                LinkedIn
-              </Button>
-              <Button href="/contact" variant="secondary">
-                Contact Page
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </div>
