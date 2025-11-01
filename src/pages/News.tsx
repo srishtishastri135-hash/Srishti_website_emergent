@@ -35,28 +35,32 @@ export default function News() {
         <div className="container mx-auto max-w-4xl">
           <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'News' }]} />
 
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4 text-[#e8f0f8]">
-            News & Updates
-          </h1>
-          <p className="text-lg text-[#a8bcd4] mb-12">
-            Latest projects, achievements, and insights from audio engineering and research.
-          </p>
+          <ScrollReveal>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4 text-[#e8f0f8]">
+              News & Updates
+            </h1>
+            <p className="text-lg text-[#a8bcd4] mb-12">
+              Latest projects, achievements, and insights from audio engineering and research.
+            </p>
+          </ScrollReveal>
 
           <div className="space-y-6">
-            {newsItems.map((item) => (
-              <Card key={item.id} hover={false}>
-                <div className="flex flex-col gap-3">
-                  <time className="text-sm text-[#8FB3F5] font-medium">
-                    {new Date(item.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </time>
-                  <h2 className="text-2xl font-bold text-[#e8f0f8]">{item.title}</h2>
-                  <p className="text-[#a8bcd4] leading-relaxed">{item.excerpt}</p>
-                </div>
-              </Card>
+            {newsItems.map((item, index) => (
+              <ScrollReveal key={item.id} delay={index * 100}>
+                <Card hover={false} tilt3d={false}>
+                  <div className="flex flex-col gap-3">
+                    <time className="text-sm text-[#8FB3F5] font-medium">
+                      {new Date(item.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </time>
+                    <h2 className="text-2xl font-bold text-[#e8f0f8]">{item.title}</h2>
+                    <p className="text-[#a8bcd4] leading-relaxed">{item.excerpt}</p>
+                  </div>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
         </div>
