@@ -7,6 +7,8 @@ import Card from '../components/Card';
 import Breadcrumb from '../components/Breadcrumb';
 import WaveformSeparator from '../components/WaveformSeparator';
 import ScrollReveal from '../components/ScrollReveal';
+import WaveformPreview from '../components/WaveformPreview';
+import FeatherLeafMotif from '../components/FeatherLeafMotif';
 import { selectedWorks, cymasonic } from '../data/mock';
 
 export default function Work() {
