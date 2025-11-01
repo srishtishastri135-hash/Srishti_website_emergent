@@ -162,7 +162,8 @@ export default function Home() {
                   Core Expertise
                 </h2>
                 <FeatherLeafMotif type="leaf" position="right" />
-              </ScrollReveal>
+              </div>
+            </ScrollReveal>
             <ScrollReveal delay={100}>
               <p className="text-center text-[#a8bcd4] mb-12 max-w-2xl mx-auto">
                 Comprehensive audio capabilities across research, production, and post-production workflows
