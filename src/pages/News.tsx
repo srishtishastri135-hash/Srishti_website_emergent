@@ -31,7 +31,7 @@ export default function News() {
     <div className="min-h-screen bg-[#0e1320]">
       <Header currentPage="news" />
 
-      <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
           <Breadcrumb items={[{ label: 'Home', path: '/' }, { label: 'News' }]} />
 
