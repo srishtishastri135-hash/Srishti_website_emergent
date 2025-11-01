@@ -20,7 +20,7 @@ export default function Home() {
 
       <main id="main-content">
         <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
-          {/* Beach image background with very dark overlay for maximum contrast */}
+          {/* Beach image background with vignette effect and blue-black tint */}
           <div className="absolute inset-0">
             <img
               src="https://images.pexels.com/photos/1295138/pexels-photo-1295138.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -28,10 +28,12 @@ export default function Home() {
               className="w-full h-full object-cover"
               aria-hidden="true"
             />
-            {/* Very dark overlay - almost black for excellent text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/88 to-black/85"></div>
-            {/* Additional dark layer with slight blue tint */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/70 via-[#0a0e18]/60 to-[#0e1320]/70"></div>
+            {/* Blue-black base overlay - lighter than before to show beach */}
+            <div className="absolute inset-0 bg-[#0a1520]/75"></div>
+            {/* Vignette effect - dark edges, lighter center */}
+            <div className="absolute inset-0 bg-gradient-radial from-transparent via-[#0d1825]/40 to-[#000000]/85"></div>
+            {/* Top gradient for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
           </div>
 
           {/* Dreamcatcher decoration */}
