@@ -305,8 +305,6 @@
   }
 
   /* Hide default cursor on interactive elements */
-  a, button, [role=\"button\"] {
-    cursor: none;
-  }
+  /* Removed - keeping default cursor visible */
 }
 
