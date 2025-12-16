@@ -53,12 +53,13 @@ export const selectedWorks = [
   {
     id: 2,
     category: "POST-PRODUCTION",
-    title: "Podcast — Daybreak: The Ken",
-    subtitle: "2 episodes",
+    title: "Podcast — The Ken",
+    subtitle: "Daybreak: 2 episodes | Zero Shot: 1 episode",
     role: "Speech optimization, restoration, podcast chain",
     links: [
-      { label: "Episode 1 on Spotify", url: "https://open.spotify.com/episode/275TyqjMVCNFuKkRwxMLZ9?si=692720b98e6348bb" },
-      { label: "Episode 2 on Spotify", url: "https://open.spotify.com/episode/2VnS7CgXabQrPOGmT3wrPm?si=692720b98e6348bb" }
+      { label: "Daybreak Episode 1 on Spotify", url: "https://open.spotify.com/episode/275TyqjMVCNFuKkRwxMLZ9?si=692720b98e6348bb" },
+      { label: "Daybreak Episode 2 on Spotify", url: "https://open.spotify.com/episode/2VnS7CgXabQrPOGmT3wrPm?si=692720b98e6348bb" },
+      { label: "Zero Shot Episode on Spotify", url: "https://open.spotify.com/episode/7EPD4ahbYVhgLrCBooqeZe?si=-5gfTO46RjCNYPI6yuTSAQ&t=198&ct=198" }
     ],
   },
   {
@@ -103,7 +104,7 @@ export const cymasonic = {
   title: "Comprehensive Audio Engineering & Post-Production",
   company: "Cymasonic Labs",
   services: [
-    "Podcast engineering: Daybreak: The Ken (2 releases)",
+    "Podcast engineering: The Ken — Daybreak (2 episodes), Zero Shot (1 episode)",
     "Live worship: recording support, take logging, pre-mix",
     "Ambience/field capture and mic placement",
     "Commercial music production (brief-driven)",
