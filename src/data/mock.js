@@ -160,6 +160,59 @@ export const knowledgeAreas = [
   },
 ];
 
+export const ambienceRecordings = [
+  {
+    id: 1,
+    title: "Monsoon Forest Ambience",
+    description: "Immersive field recording capturing the soundscape of a Western Ghats forest during monsoon season. Features rainfall, distant thunder, bird calls, and rustling foliage.",
+    location: "Western Ghats, India",
+    recordingType: "Outdoor",
+    duration: 480,
+    audioUrl: "https://example.com/audio/monsoon-forest.mp3",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Live Worship Venue Acoustics",
+    description: "Captured acoustics of a live worship performance space. Demonstrates microphone placement, room tone, and spatial audio characteristics.",
+    location: "Bangalore, India",
+    recordingType: "Live Venue",
+    duration: 300,
+    audioUrl: "https://example.com/audio/live-worship-acoustics.mp3",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Urban Street Soundscape",
+    description: "Ambient recording of city sounds including traffic, pedestrians, and street vendors. Showcases noise management and selective mic placement.",
+    location: "Bangalore, India",
+    recordingType: "Outdoor",
+    duration: 420,
+    audioUrl: "https://example.com/audio/urban-soundscape.mp3",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Studio Room Tone",
+    description: "Precise capture of studio acoustic characteristics. Useful for understanding room reflections and optimal mic positioning.",
+    location: "Professional Studio",
+    recordingType: "Studio Ambience",
+    duration: 240,
+    audioUrl: "https://example.com/audio/studio-room-tone.mp3",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Coastal Wind and Waves",
+    description: "Serene coastal ambience with gentle waves and ocean breeze. Demonstrates field recording in challenging outdoor conditions.",
+    location: "Coastal Karnataka, India",
+    recordingType: "Field Recordings",
+    duration: 360,
+    audioUrl: "https://example.com/audio/coastal-waves.mp3",
+    featured: false,
+  },
+];
+
 export const equipment = {
   microphones: {
     title: "Mics & Recorders",

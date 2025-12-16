@@ -9,7 +9,8 @@ import ScrollReveal from '../components/ScrollReveal';
 import Dreamcatcher from '../components/Dreamcatcher';
 import FeatherLeafMotif from '../components/FeatherLeafMotif';
 import SunMoonPhase from '../components/SunMoonPhase';
-import { personalInfo, valueHighlights, selectedWorks } from '../data/mock';
+import { personalInfo, valueHighlights, selectedWorks, ambienceRecordings } from '../data/mock';
+import AmbienceCard from '../components/AmbienceCard';
 
 export default function Home() {
   const featuredWorks = selectedWorks.slice(0, 3);
@@ -200,6 +201,53 @@ export default function Home() {
               <div className="text-center">
                 <Button href="/work#selected" icon>
                   View Full Portfolio
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <WaveformSeparator />
+
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-6xl">
+            <ScrollReveal>
+              <div className="flex items-center justify-center mb-4">
+                <FeatherLeafMotif type="leaf" position="left" />
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-center gradient-text">
+                  Field Recording Samples
+                </h2>
+                <FeatherLeafMotif type="feather" position="right" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-center text-[#a8bcd4] mb-12 max-w-2xl mx-auto">
+                Ambient recordings from diverse environments showcasing microphone techniques and field recording expertise
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {ambienceRecordings
+                .filter((recording) => recording.featured)
+                .slice(0, 3)
+                .map((recording, index) => (
+                  <ScrollReveal key={recording.id} delay={index * 150}>
+                    <AmbienceCard
+                      title={recording.title}
+                      description={recording.description}
+                      location={recording.location}
+                      recordingType={recording.recordingType}
+                      duration={recording.duration}
+                      audioUrl={recording.audioUrl}
+                    />
+                  </ScrollReveal>
+                ))}
+            </div>
+
+            <ScrollReveal>
+              <div className="text-center">
+                <Button href="/work#field-recordings" icon>
+                  View All Field Recordings
                 </Button>
               </div>
             </ScrollReveal>

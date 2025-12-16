@@ -9,10 +9,12 @@ import WaveformSeparator from '../components/WaveformSeparator';
 import ScrollReveal from '../components/ScrollReveal';
 import WaveformPreview from '../components/WaveformPreview';
 import FeatherLeafMotif from '../components/FeatherLeafMotif';
-import { selectedWorks, cymasonic } from '../data/mock';
+import AmbienceCard from '../components/AmbienceCard';
+import { selectedWorks, cymasonic, ambienceRecordings } from '../data/mock';
 
 export default function Work() {
   const [filter, setFilter] = useState<string>('all');
+  const [ambienceFilter, setAmbienceFilter] = useState<string>('all');
 
   const filteredWorks =
     filter === 'all'
@@ -25,6 +27,17 @@ export default function Work() {
           if (filter === 'live') return work.title.toLowerCase().includes('live') || work.title.toLowerCase().includes('worship');
           return category === filter;
         });
+
+  const filteredAmbience =
+    ambienceFilter === 'all'
+      ? ambienceRecordings
+      : ambienceRecordings.filter((recording) =>
+          recording.recordingType.toLowerCase() === ambienceFilter.toLowerCase()
+        );
+
+  const ambienceTypes = Array.from(
+    new Set(ambienceRecordings.map((r) => r.recordingType))
+  ).sort();
 
   return (
     <div className="min-h-screen bg-[#0e1320]">
@@ -115,6 +128,66 @@ export default function Work() {
               </Card>
             </section>
           </ScrollReveal>
+
+          <WaveformSeparator />
+
+          <section id="field-recordings" className="scroll-mt-24">
+            <ScrollReveal>
+              <div className="flex items-center justify-center mb-8">
+                <FeatherLeafMotif type="feather" position="left" />
+                <h2 className="font-serif text-3xl font-bold gradient-text">Field Recordings</h2>
+                <FeatherLeafMotif type="leaf" position="right" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <p className="text-center text-[#a8bcd4] mb-8 max-w-2xl mx-auto">
+                Curated ambience recordings showcasing field recording expertise across outdoor, venue, and studio environments.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={150}>
+              <div className="flex flex-wrap gap-3 mb-8 justify-center">
+                <button
+                  onClick={() => setAmbienceFilter('all')}
+                  className={`px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-200 focus-ring button-hover-scale ${
+                    ambienceFilter === 'all'
+                      ? 'bg-gradient-to-r from-[#6B8DD6] via-[#8FB3F5] to-[#9BC8FF] text-[#0e1320]'
+                      : 'border-2 border-[#8FB3F5]/50 text-[#8FB3F5] hover:bg-[#1f2738]'
+                  }`}
+                >
+                  All
+                </button>
+                {ambienceTypes.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setAmbienceFilter(type)}
+                    className={`px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-200 focus-ring button-hover-scale ${
+                      ambienceFilter === type
+                        ? 'bg-gradient-to-r from-[#6B8DD6] via-[#8FB3F5] to-[#9BC8FF] text-[#0e1320]'
+                        : 'border-2 border-[#8FB3F5]/50 text-[#8FB3F5] hover:bg-[#1f2738]'
+                    }`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {filteredAmbience.map((recording, index) => (
+                <ScrollReveal key={recording.id} delay={index * 80}>
+                  <AmbienceCard
+                    title={recording.title}
+                    description={recording.description}
+                    location={recording.location}
+                    recordingType={recording.recordingType}
+                    duration={recording.duration}
+                    audioUrl={recording.audioUrl}
+                  />
+                </ScrollReveal>
+              ))}
+            </div>
+          </section>
 
           <WaveformSeparator />
 
